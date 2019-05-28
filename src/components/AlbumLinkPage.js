@@ -37,7 +37,7 @@ class AlbumLinkPage extends Component {
     <div className="linkPage">
 
       <div className='image'>
-        <img src={changeArtworkURL(album.artworkUrl100)}/>
+        <img className='linkImage' src={changeArtworkURL(album.artworkUrl100)}/>
       </div>
 
       <div className='linkFullInfo'>
@@ -55,12 +55,16 @@ class AlbumLinkPage extends Component {
         {songs.map((song, index) => (
 
             <div className='songRow'>
-                    <div>{index + 1}</div>
-                    <div><i onClick={() => this.getAlbumInfo(song)} class="fas fa-play"></i></div>
+                  <div className='songRowFirstHalf'>
+                    <div className='songNumber'>{index + 1}</div>
+                    <div className='songRowPlay'><i onClick={() => this.getAlbumInfo(song)} class="fas fa-play"></i></div>
                     <div className='songTitle'>{song.trackName}</div>
-                    <div>{song.artistName}</div>
+                  </div>
+                  <div className='songRowSecondHalf'>
+                    <div className='songRowArtistName'>{song.artistName}</div>
                     <button className='add' onClick={() => AddToFavorites(song)}>+</button>
                     <div>{millisToMinutesAndSeconds(song.trackTimeMillis)}</div>
+                  </div>
             </div>
                         
         ))}

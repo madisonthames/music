@@ -28,7 +28,7 @@ class TopSongs extends Component {
 
         return(
 
-            <div className='releaseContainer'>
+            <section className='releaseContainer'>
                 <h2>Top Songs</h2>
                 
             <div className='fullReleaseInfo'>
@@ -41,7 +41,7 @@ class TopSongs extends Component {
                     </div>
                 ))}
             </div>
-            </div>
+            </section>
         )
     }
 }

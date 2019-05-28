@@ -10,7 +10,7 @@ app.get('/api/topAlbums', dataController.getTopAlbums);
 
 app.get('/api/newReleases/:id', dataController.getNewReleaseAlbum);
 app.get('/api/topSongs/:id', dataController.getTopSongsLink);
-app.get('/api/topAlbums', dataController.getTopAlbumsAlbum);
+app.get('/api/topAlbums/:id', dataController.getTopAlbumsAlbum);
 
 app.post('/api/favorites', dataController.addSongToFavorites);
 

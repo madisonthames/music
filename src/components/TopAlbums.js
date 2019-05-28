@@ -26,7 +26,7 @@ class TopAlbums extends Component {
         const { topAlbums } = this.state;
 
         return(
-            <div className='releaseContainer'>
+            <section className='releaseContainer'>
                 <h2>Top Albums</h2>
                 
             <div className='fullReleaseInfo'>
@@ -40,7 +40,7 @@ class TopAlbums extends Component {
                     ))}
                 </div>
 
-            </div>
+            </section>
         )
     }
 }

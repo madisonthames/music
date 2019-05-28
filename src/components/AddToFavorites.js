@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 function AddToFavorites( track ) {
-    console.log('madison')
 
     axios
     .post('/api/favorites', track).then((response) => {

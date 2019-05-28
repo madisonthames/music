@@ -4,6 +4,7 @@ import Browse from './Browse';
 import NewReleases from './NewReleases';
 import TopSongs from './TopSongs';
 import TopAlbums from './TopAlbums';
+import Header from './Header'
 
 class Home extends Component {
     render() {

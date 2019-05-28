@@ -26,44 +26,47 @@ class SongLinkPage extends Component {
         })
     }
 
+        
 
   render()  {
       const { track } = this.state;   
 
   return (
 
-    <div className="linkPage">
+    <div className="songLinkPage">
 
-      <div className='image'>
-        <img src={changeArtworkURL(track.artworkUrl100)}/>
+      <div className='songLinkPageImageContainer'>
+        <img className='songLinkPageImage' src={changeArtworkURL(track.artworkUrl100)}/>
       </div>
 
-      <div className='linkFullInfo'>
+      <div className='songLinkPageFullInfo'>
             <div className='title'>
-                <h1 className='linkPageTitle'>{track.collectionCensoredName}</h1>
-                <h2 className='linkPageArtist'>{track.artistName}</h2>
+                <h1 className='songLinkPageMainTitle'>{track.collectionCensoredName}</h1>
+                <h2 className='songLinkPageArtist'>{track.artistName}</h2>
                 </div>
     
-                <div className='typeRow'>
+                <div className='songLinkPageTypeRow'>
                 <div>Song</div>
                 <div>Artist</div>
                 <div>Time</div>
             </div>
         
-            <div className='songRow'>
-                    <div>1</div>
-                    <div><i onClick={() => this.getSongInfo(track)} class="fas fa-play"></i></div>
-                    <div className='songTitle'>{track.trackName}</div>
-                    <div>{track.artistName}</div>
+            <div className='songRowLinkPage'>
+                <div className='songRowLinkPageFirstHalf'>
+                    <div className='songLinkPageNumber'>1</div>
+                    <div className='songLinkPageRowPlay'><i onClick={() => this.getSongInfo(track)} class="fas fa-play"></i></div>
+                    <div className='songLinkPageTitle'>{track.trackName}</div>
+                </div>
+
+                <div className='songRowLinkPageSecondHalf'>
+                    <div className='songRowLinkPageArtist'>{track.artistName}</div>
                     <button className='add' onClick={() => AddToFavorites(track)}>+</button>
                     <div>{millisToMinutesAndSeconds(track.trackTimeMillis)}</div>
+                </div>
             </div>
                 
 
       </div>
-
-
-
     </div>
   );
 }

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import AlbumLinkPage from './AlbumLinkPage';
 import SongLinkPage from './SongLinkPage';
+import { Link } from 'react-router-dom';
 
 
 class Header extends Component {
@@ -24,13 +26,10 @@ class Header extends Component {
 
     componentWillUpdate() {
         this.audioPlaying.pause(); 
-        console.log(1)
-        // this.audioPlaying = new Audio(this.props.currentlyPlaying.previewUrl)
     }
 
     render() {
         this.audioPlaying = new Audio(this.props.currentlyPlaying.previewUrl);
-        console.log(2)
         if(this.audioPlaying) {
             this.audioPlaying.play();
         }
@@ -38,43 +37,39 @@ class Header extends Component {
         return(
             <header className='header'>
 
-                <div className='headerControlButtons'>
-                    <div className='logo'>
-                        <img src='https://sitejerk.com/images/apple-music-logo-transparent-9.png' className='logo'/>
-                    </div>
                         
-                    <div className='playIcons'>
-                            <i class="fas fa-backward"></i>
-                            <i onClick={() => this.playAudio(this.audioPlaying)} class="fas fa-play"></i>
-                            <i onClick={() => this.pauseAudio(this.audioPlaying)} class="fas fa-pause"></i>
-                            <i class="fas fa-forward"></i>
-                    </div>
+                        <section className='fullLogo'>
+                            <Link to='/'><img src='https://sitejerk.com/images/apple-music-logo-transparent-9.png' className='logo'/></Link>
+                            <div><h2 className='homeHeaderName'>iMusic</h2></div>
+                        </section>
 
-                </div>
 
-                <div className='headerCurrentTrack'>
-                        
-                        <img className='currentAlbum' src={this.props.currentlyPlaying.artworkUrl100}/>
-                            <div className='currentSongInfo'>
-                                <div className='headerSong'>
-                                    {this.props.currentlyPlaying.trackName}
-                                </div>
-                                
-                                <div className='songInfo'>
-                                {this.props.currentlyPlaying.artistName} - {this.props.currentlyPlaying.collectionName}
-                                </div>
+
+                    <section className='headerCurrentTrack'>
+                            
+                            <div className='currentAlbum'>
+                                <img className='currentAlbumImage' src={this.props.currentlyPlaying.artworkUrl100}/>
                             </div>
-                        
-                </div>
 
-                <div className='headerSearch'>
-                    <div className='searchBarContainer'>
-                        <i class="fas fa-search"></i>
+                            <div className='currentSongInfo'>
+                            <div className='headerSong'>
+                                    
+                                        {this.props.currentlyPlaying.trackName}
 
-                        <input className='searchBar' placeholder='Search'></input>
-                    </div>
+                                    <div className='songInfo'>
+                                        {this.props.currentlyPlaying.artistName} - {this.props.currentlyPlaying.collectionName}
+                                    </div>
+                            </div>
+                            </div>
 
-                </div>
+                                            
+                    
+
+                        <section className='playIcons'>
+                                    <i onClick={() => this.playAudio(this.audioPlaying)} class="fas fa-play"></i>
+                                    <i onClick={() => this.pauseAudio(this.audioPlaying)} class="fas fa-pause"></i>
+                        </section>  
+                </section>
             </header>
         )
     }
