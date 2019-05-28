@@ -1,33 +1,230 @@
-.App {
-  text-align: center;
+@import-normalize;
+
+body {
+  background-color: rgb(41, 40, 40);
+  padding-top: 60px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background-color: rgb(46, 45, 45);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* h1 {
+  color: white;
+  margin: 20px;
+  padding-bottom: 10px;
+  border-bottom: solid .25px rgb(88, 86, 86);
+} */
+
+.headerControlButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 33%;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  transform: translateY(-3px);
+  margin-left: 3px;
+}
+
+.playIcons {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  color:  rgb(193, 189, 189);
+}
+
+.playIcons i {
+  font-size: 30px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.headerCurrentTrack {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0px;
+  height: 60px;
+  width: 34%;
+  font-size: 10px;
+  background-color:  rgb(41, 40, 40);
+}
+
+.currentAlbum {
+  display: flex;
+  justify-content: flex-start;
+  width: 60px;
+  height: 60px;
+}
+
+.currentSongInfo {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  font-size: 12px;
+  flex: 1 1 auto;
+  color: rgb(129, 123, 123);
+}
+
+.headerSong {
+  color: rgb(193, 189, 189);
+  font-size: 15px;
+  margin-bottom: 3px;
+}
+
+.headerSearch {
+  display: flex;
+  justify-content: center;
+  width: 33%;
+}
+
+.searchBarContainer {
+  position: relative;
+}
+
+.searchBarContainer i {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  color:  rgb(193, 189, 189);
+}
+
+.searchBar {
+  width: 200px;
+  height: 25px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(82, 79, 79);
+}
+
+input::placeholder {
+  padding-left: 27px;
+  font-size: 15px;
+  color: rgb(152, 150, 150);
+}
+
+.releaseContainer {
+  margin: 20px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.browse {
+  color: white;
+  font-size: 35px;
+  border-bottom: solid .25px rgb(88, 86, 86);
+  padding-bottom: 10px;
+  margin: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.albumArt {
+  width: 175px;
+  height: 175px;
+  border-radius: 3%;
+}
+
+p.artist {
+  font-size: 12px;
+  margin: 5px 0px 5px 0px;
+  text-overflow: ellipsis;
+}
+
+p.title {
+  font-size: 10px;
+  color: rgb(129, 123, 123);
+  margin: 5px 0px 5px 0px;
+  text-overflow: ellipsis;
+}
+
+.fullReleaseInfo {
+  display: flex;
+  justify-content: space-between;
+  overflow: auto;
+  padding-bottom: 20px;
+  border-bottom: solid .25px rgb(88, 86, 86);
+}
+
+.releaseInfo {
+  margin-right: 20px;
+  width: 175px;
+}
+
+.linkPage {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.image {
+  width: 300px;
+  height: 300px;
+}
+
+img {
+  width: 350px;
+  height: 350px;
+  border-radius: 3%;
+}
+
+.linkFullInfo {
+  display: flex;
+  flex-direction: column;
+  flex-grow: .5;
+  width: 50%;
+}
+
+.linkPageTitle {
+  margin: 0px;
+  margin-bottom: 2px;
+  font-size: 25px;
+  color: white;
+}
+
+.linkPageArtist {
+  margin: 0px;
+  font-size: 17px;
+  margin-bottom: 10px;
+  color: rgb(19, 80, 184);
+}
+
+.typeRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  border-bottom: solid .25px rgb(88, 86, 86);
+  border-top: solid .25px rgb(88, 86, 86);
+  color: rgb(129, 123, 123);
+}
+
+.songRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  border-bottom: solid .25px rgb(88, 86, 86);
+  color: rgb(129, 123, 123); 
+}
+
+.songTitle {
+  color: white;
+}
+
+.add {
+  font-size: 25px;
+  color: rgb(19, 80, 184);
+  font-weight: bold;
+  transform: translateY(-3px);
+  background: none;
+  border: none;
 }

@@ -1,26 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import { Route, Link, Redirect, BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
+import Home from './components/Home';
+import Header from './components/Header';
+import AlbumLinkPage from './components/AlbumLinkPage';
+import SongLinkPage from './components/SongLinkPage';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super(); 
+    this.state = {
+        currentlyPlaying: {}    
+    } 
+
+    this.getSongInfo = this.getSongInfo.bind(this);
+    this.getAlbumInfo = this.getAlbumInfo.bind(this);
 }
 
+  getSongInfo = (song) => {
+    this.setState({ currentlyPlaying: song })
+  }
+
+  getAlbumInfo = (songs) => {
+    this.setState({ currentlyPlaying: songs})
+  }
+
+  render() {
+  return (
+    <div>
+
+      <header>
+        <Header currentlyPlaying={this.state.currentlyPlaying}/>
+      </header>
+
+      <Router>
+        <switch>
+        <Route exact={true} path='/' component={Home}/>
+        <Route path='/AlbumLinkPage/:id' render={props => ( <AlbumLinkPage {...props} getAlbumInfo={this.getSongInfo}/> )}/>
+        <Route path='/SongLinkPage/:id' render={props => ( <SongLinkPage {...props} getSongInfo={this.getSongInfo}/> )}/>
+        </switch>
+      </Router>
+      
+    </div>
+
+  );
+}
+}
+
+
 export default App;
+
