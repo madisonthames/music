@@ -3,6 +3,7 @@ import axios from 'axios';
 import AlbumLinkPage from './AlbumLinkPage';
 import SongLinkPage from './SongLinkPage';
 import { Link } from 'react-router-dom';
+import Logo from './Logo';
 
 
 class Header extends Component {
@@ -14,7 +15,7 @@ class Header extends Component {
         }
     }
 
-    audioPlaying = new Audio(this.props.currentlyPlaying.previewUrl)
+    // audioPlaying = new Audio(this.props.currentlyPlaying.previewUrl)
 
     playAudio(audio) {
         audio.play();
@@ -36,10 +37,9 @@ class Header extends Component {
 
         return(
             <header className='header'>
-
-                        
+      
                         <section className='fullLogo'>
-                            <Link to='/'><img src='https://sitejerk.com/images/apple-music-logo-transparent-9.png' className='logo'/></Link>
+                            < Logo />
                             <div><h2 className='homeHeaderName'>iMusic</h2></div>
                         </section>
 

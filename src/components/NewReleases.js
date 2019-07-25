@@ -15,7 +15,7 @@ class NewReleases extends Component {
         axios
         .get("/api/newReleases")
         .then(response => {
-            this.setState({ newReleases: response.data.feed.results });
+            this.setState({ newReleases: response.data});
         })
         .catch(error => {
             this.setState({ error: "Oops, please try again."})

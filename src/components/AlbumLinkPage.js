@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { millisToMinutesAndSeconds, changeArtworkURL } from './Helpers';
 import AddToFavorites from './AddToFavorites';
+import Logo from'./Logo';
+import {Link} from 'react-router-dom';
 
 class AlbumLinkPage extends Component {
     constructor() {

@@ -26,8 +26,6 @@ class SongLinkPage extends Component {
         })
     }
 
-        
-
   render()  {
       const { track } = this.state;   
 

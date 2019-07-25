@@ -7,7 +7,7 @@ body {
 
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   position: fixed;
   top: 0;
@@ -33,9 +33,9 @@ body {
   display: flex;
   justify-content: space-between;
   background-color:  rgb(41, 40, 40);
-  margin: 0px;
+  margin-left: 170px;
   height: 60px;
-  width: 45%;
+  width: 40%;
   font-size: 10px;
 }
 
@@ -67,6 +67,8 @@ body {
 .currentSongInfo {
   display: flex;
   align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .headerSong {
@@ -80,6 +82,8 @@ body {
   width: 300px;
   font-size: 15px;
   text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .songInfo {
@@ -88,7 +92,6 @@ body {
   white-space: nowrap;
   text-align: left;
   overflow: hidden;
-  text-overflow: auto;
   margin-top: 3px;
 }
 

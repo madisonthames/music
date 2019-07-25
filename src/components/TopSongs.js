@@ -15,7 +15,7 @@ class TopSongs extends Component {
         axios
         .get("/api/topSongs")
         .then(response => {
-            this.setState({ topSongs: response.data.feed.results });
+            this.setState({ topSongs: response.data });
         })
         .catch(error => {
             console.log(error);

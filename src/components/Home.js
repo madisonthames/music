@@ -9,7 +9,6 @@ import Header from './Header'
 class Home extends Component {
     render() {
         return (
-
             <React.Fragment>
                 <Browse />
                 <NewReleases />

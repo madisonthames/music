@@ -30,17 +30,16 @@ class App extends Component {
     <div>
 
       <Router>
+        <switch>
         <header>
           <Header currentlyPlaying={this.state.currentlyPlaying}/>
         </header>
-
-        <switch>
         <Route exact={true} path='/' component={Home}/>
         <Route path='/AlbumLinkPage/:id' render={props => ( <AlbumLinkPage {...props} getAlbumInfo={this.getSongInfo}/> )}/>
         <Route path='/SongLinkPage/:id' render={props => ( <SongLinkPage {...props} getSongInfo={this.getSongInfo}/> )}/>
         </switch>
       </Router>
-      
+
     </div>
 
   );

@@ -3,10 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "main": "server/index.js",
-  "proxy": "http://localhost:5000",
+  "proxy": "http://localhost:5050",
   "dependencies": {
     "axios": "^0.18.0",
+    "circular-json": "^0.5.9",
+    "dotenv": "^8.0.0",
     "express": "^4.17.1",
+    "font-awesome": "^4.7.0",
+    "massive": "^5.10.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router": "^5.0.0",
@@ -33,5 +37,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madisonthames/music.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/madisonthames/music/issues"
+  },
+  "homepage": "https://github.com/madisonthames/music#readme"
 }
