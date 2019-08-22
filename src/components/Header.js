@@ -11,11 +11,16 @@ class Header extends Component {
         super(props);
         console.log(props)
         this.state = {
-            audio: {}
+            audio: {},
+            isPaused: true
         }
     }
 
     // audioPlaying = new Audio(this.props.currentlyPlaying.previewUrl)
+
+    togglePlay = (audio) => {
+
+    }
 
     playAudio(audio) {
         audio.play();
@@ -66,8 +71,9 @@ class Header extends Component {
                     
 
                         <section className='playIcons'>
-                                    <i onClick={() => this.playAudio(this.audioPlaying)} class="fas fa-play"></i>
-                                    <i onClick={() => this.pauseAudio(this.audioPlaying)} class="fas fa-pause"></i>
+                                    {/* <i onClick={() => this.playAudio(this.audioPlaying)} class="fas fa-play"></i>
+                                    <i onClick={() => this.pauseAudio(this.audioPlaying)} class="fas fa-pause"></i> */}
+                                    <i className={`fas ${this.state.isPaused ? 'fa-play' : 'fa-pause'}`}></i> 
                         </section>  
                 </section>
             </header>
