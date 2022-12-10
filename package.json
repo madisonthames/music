@@ -8,7 +8,7 @@
     "axios": "^0.18.0",
     "circular-json": "^0.5.9",
     "dotenv": "^8.0.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "font-awesome": "^4.7.0",
     "massive": "^5.10.0",
     "react": "^16.8.6",
